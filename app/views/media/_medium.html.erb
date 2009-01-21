@@ -1,0 +1,7 @@
+<%= error_messages_for :medium %>
+<tr>
+	<td><%=h @medium.name %></td>
+	<td align="center"><%= link_to image_tag('group_show.png', :alt=>'Show', :title=>'Show Media', :border=>'0'), admin_medium_path(@medium) %></td>
+	<td align="center"><%= link_to image_tag('group_edit.png', :alt=>'Edit', :title=>'Edit Media', :border=>'0'), edit_admin_medium_path(@medium) %></td>
+	<td align="center"><%= link_to image_tag('group_delete.png', :alt=>'Delete', :title=>'Delete Media', :border=>'0'), admin_medium_path(@medium), :confirm => "Are you sure you want to delete media, #{@medium.name}?", :method => :delete %></td>
+</tr>

@@ -1,0 +1,32 @@
+<% unless @paintings.size == 0 %>
+<table border="1">
+<thead>
+  <tr>
+	<th class="label2">Title</th>
+	<th class="label2">Artist</th>
+	<th class="label2">Year</th>
+	<th class="label2">Size</th>
+	<th class="label2">Price</th>
+	<th class="label2">Show</th>
+	<th class="label2">Edit</th>
+	<th class="label2">Delete</th>
+  </tr>
+</thead>
+<% for painting in @paintings %>
+  <tr>
+    <td><%= h painting.title %></td>
+    <td><%= h painting.artists.map{ |artist| artist.name } %></td>
+    <td><% if !painting.year.nil? %><%= painting.year.strftime("%Y") %><% end %></td>
+    <td><%= h painting.size %></td>
+    <td>$<%= sprintf("%.2f", painting.price) %></td>
+    <td align="center"><%= link_to image_tag('group_show.png', :alt=>'Show', :title=>'Show Painting', :border=>'0'), admin_painting_path(painting) %></td>
+    <td align="center"><%= link_to image_tag('group_edit.png', :alt=>'Edit', :title=>'Edit Painting', :border=>'0'), edit_admin_painting_path(painting) %></td>
+    <td align="center"><%= link_to image_tag('group_delete.png', :alt=>'Delete', :title=>'Delete Painting', :border=>'0'), admin_painting_path(painting), :confirm => "Are you sure you want to delete painting, #{painting.title}?", :method => :delete  %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<p>No Paintings Found</p>
+<% end %>
+<br />
+<p class="text4"><%= link_to 'Add a new painting', new_admin_painting_path %></p>

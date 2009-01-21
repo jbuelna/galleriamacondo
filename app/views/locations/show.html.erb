@@ -1,0 +1,23 @@
+<dl>
+  <dt class="label2">ID</dt>
+  <dd><%= @location.id %></dd>
+  <dt class="label2">Name</dt>
+  <dd><%= @location.name %></dd>
+  <dt class="label2">Address Line 1</dt>
+  <dd><%= @location.address_line_1 %></dd>
+  <dt class="label2">Address Line 2</dt>
+  <dd><%= @location.address_line_2 %></dd>
+  <dt class="label2">City</dt>
+  <dd><%= @location.city %></dd>
+  <dt class="label2">State</dt>
+  <dd><%= @location.state %></dd>
+  <dt class="label2">Zip</dt>
+  <dd><%= @location.zip %></dd>
+  <dt class="label2">Latitude</dt>
+  <dd><%= @location.lat %></dd>
+  <dt class="label2">Longitude</dt>
+  <dd><%= @location.lng %></dd>
+</dl>
+
+<p class="text4"><%= link_to 'Edit', edit_admin_location_path %> |
+<%= link_to 'Back', admin_locations_path %></p>

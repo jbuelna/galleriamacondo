@@ -1,0 +1,9 @@
+<% form_for(@location, :url => { :action => 'update', :id => @location}, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => 'form' %>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<p class="text4"><%= link_to 'Show', admin_location_path %> |
+<%= link_to 'Back', admin_locations_path %></p>

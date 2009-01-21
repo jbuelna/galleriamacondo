@@ -1,0 +1,55 @@
+<div id="custom-doc" class="yui-t5">
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b"><div class="yui-g">
+			<% if @painting.painting_image.nil? %>
+			No image on file
+			<% else %>
+			<%= image_tag url_for_file_column("painting", "painting_image", "large") %>
+			<% end %>
+		    </div>
+		    <br/>
+		    Notes:<br/>
+			<%= @painting.notes %><br/>
+			<br/>
+			
+			</div>
+		</div>
+		<div class="yui-b">
+		<div class="text4"><%= @painting.title %></h3></div>
+		<hr/>
+		by <%= link_to @painting.artists.map{ |artist| artist.name }, gallery_index_path(:search => @painting.artists.map{ |artist| artist.name }) %><br/>
+		<%= link_to @painting.medium.name, gallery_index_path(:search => @painting.medium.name) %><br/>
+		<% if !@painting.year.nil? %>
+		<%= "Painted in #{@painting.year.strftime("%Y")}" %><br/>
+		<% end %>
+		<%= @painting.size %> inches<br/>
+		$<%= sprintf("%.2f", @painting.price) %><br/><br/>
+		Location:<br/>
+		<% if @painting.location.nil? %>
+		Not available
+		<% else %>
+		<%= @painting.location.address %>
+		<% if !@painting.location.lat.nil? %>
+			<%= @map.to_html %>  
+			<%= @map.div(:width => 210, :height => 210) %>
+		<% end %>
+		<% end %>
+	</div>
+	</div>
+</div>
+<br/>
+<p class="text4"><%= link_to 'Back', home_path %></p>
+
+<h2 class="text3">Comments</h2>
+<div id="comments">
+	<%= render :partial => @painting.comments %>
+</div>
+<br />
+<% remote_form_for [@painting, Comment.new] do |f| %>
+  <p>
+	<%= f.label :body, "New Comment" %><br />
+	<%= f.text_area :body, :size => "80x10" %>
+  </p><br />
+  <p><%= f.submit "Add Comment" %>
+<% end %>

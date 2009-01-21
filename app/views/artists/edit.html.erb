@@ -1,0 +1,9 @@
+<% form_for(@artist, :url => { :action => 'update', :id => @artist})  do |f| %>
+  <%= render :partial => 'form' %>
+  <p>
+  <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<p class="text4"><%= link_to 'Show', admin_artist_path %> | 
+<%= link_to 'Back', admin_artists_path %></p>

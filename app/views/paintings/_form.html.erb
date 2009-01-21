@@ -1,0 +1,41 @@
+<%= error_messages_for :painting %>
+
+<p><label for="painting_title" class="label2">Title</label><br/>
+<%= text_field :painting, :title, :size => '50' %></p>
+
+<p><label for="painting[artist_ids][]">Artists</label><br/>
+<%= select_tag 'painting[artist_ids][]',
+       options_from_collection_for_select(@artists, :id, :name,
+         @painting.artists.collect{|artist| artist.id}) %></p>
+
+<p><label for="painting_medium" class="label2">Media</label><br/>
+<%= collection_select :painting, :medium_id, @media, :id, :name %></p>
+
+<p><label for="painting_year" class="label2">Year</label><br/>
+<%= date_select(:painting, :year, :start_year => Date.current.year, :end_year => 1900, :discard_month => true, 
+                :discard_day => true, :default => { :year => 2008 }) %>
+
+<p><label for="painting_size" class="label2">Size (in inches)</label><br/>
+<label>Length</label> <%= text_field :painting, :length, :maxlength => '5' %> 
+<label>Width</label> <%= text_field :painting, :width, :maxlength => '5' %></p>
+
+<p><label for="painting_price" class="label2">Price</label><br/>
+<%= text_field :painting, :price, :size => '20' %></p>
+
+<p><label for="painting_notes" class="label2">Notes</label><br/>
+<%= text_area(:painting, :notes, :cols => 50, :rows => 3) %></p>
+
+<p><label for="painting_location" class="label2">Location</label><br/>
+<%= collection_select :painting, :location_id, @location, :id, :name, :include_blank => true %></p>
+
+<p><label for="painting_image" class="label2">Image Link</label><br/>
+<%= file_column_field "painting", "painting_image" %></p>
+
+<% if !@painting.id.nil? %>
+<p><label for="painting_image" class="label2">Image</label><br/>
+  <% if @painting.painting_image.nil? %>
+No image on file
+  <% else %>
+    <%= image_tag url_for_file_column("painting", "painting_image", "medium") %>
+  <% end %>
+<% end %>

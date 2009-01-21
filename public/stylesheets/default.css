@@ -1,0 +1,167 @@
+/** BASIC */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #5D310B url(/images/bg_01.jpg) repeat-x;
+}
+
+/** FORMS */
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+/** HEADINGS */
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+}
+
+/** TEXTS */
+
+body, th, td, input, textarea, select {
+	font: 11px Arial, Helvetica, sans-serif;
+	color: #535353;
+}
+
+p, blockquote, ul, ol, dl {
+	margin-top: 0px;
+	text-align: justify;
+	line-height: 18px;
+}
+
+.align-justify {
+	line-height: 18px;
+	text-align: justify;
+}
+
+.text1 {
+	display: block;
+	margin-bottom: 18px;
+	text-transform: uppercase;
+	font: bold 13px Georgia, "Times New Roman", Times, serif;
+	color: #513A27;
+}
+
+.text2 {
+	display: block;
+	margin-bottom: 7px;
+	padding: 2px 0px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #6B684F;
+}
+
+.text3 {
+	padding: 2px 5px;
+	background: url(/images/homepage05.gif);
+	color: #FFFFFF;
+}
+
+.text4 {
+	display: block;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font: bold 11px Georgia, "Times New Roman", Times, serif;
+	color: #513A27;
+}
+
+.text5 {
+	padding-top: 15px;
+	text-align: center;
+	color: #9D7B5C;
+}
+
+.text6 {
+	display: block;
+	margin-bottom: 7px;
+	padding: 2px 0px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #6B684F;
+}
+
+/** LINKS */
+
+a {
+	color: #513A27;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.link1 {
+	display: block;
+	width: 115px;
+	padding: 10px 0px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font: bold 10px Georgia, "Times New Roman", Times, serif;
+	color: #432C16;
+}
+
+a.link1:hover {
+	background: url(/images/homepage04.gif) no-repeat;
+	color: #FFFFFF;
+}
+
+/** BACKGROUNDS */
+
+.bg1 {
+	background: url(/images/bg_02.jpg) no-repeat;
+}
+
+.bg2 {
+	background: url(/images/bg_03.jpg) no-repeat;
+}
+
+.bg3 {
+	background: url(/images/bg_04.jpg) repeat-y;
+}
+
+.bg4 {
+	background: url(/images/bg_05.jpg) no-repeat;
+}
+
+.bg5 {
+	background: url(/images/homepage06.gif) repeat-x left center;
+}
+
+.bg6 {
+	background: url(/images/homepage07.gif) repeat-y center top;
+}
+
+/** MISC */
+
+.img1 {
+	float: left;
+	margin-right: 15px;
+}
+
+hr {
+	height: 1px;
+	color: #535353;
+}
+
+.hr1 {
+	height: 1px;
+	background: url(/images/homepage06.gif);
+}
+.label2 {
+	font-size: 11px;
+	font-weight: bold;
+	color: #6B684F;
+}
+
+/** THE GALLERY */
+div#home_col_1
+{width:150px;
+ text-align:left;
+ padding-top:20px;
+ padding-left:50%;
+ border: 0px solid; /* Remove border */
+}

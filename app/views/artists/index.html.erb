@@ -1,0 +1,28 @@
+<% unless @artists.size == 0 %>
+<table border="1">
+<thead>
+  <tr>
+    <th class="label2">ID</th>
+	  <th class="label2">Name</th>
+	  <th class="label2">Email</th>
+	  <th class="label2">Show</th>
+	  <th class="label2">Edit</th>
+	  <th class="label2">Delete</th>
+  </tr>
+</thead>
+<% for artist in @artists %>
+<tr>
+  <td><%= artist.id %></td>
+  <td><%= artist.name %></td>
+  <td><%= artist.email %></td>
+  <td align="center"><%= link_to image_tag('group_show.png', :alt=>'Show', :title=>'Show Artist', :border=>'0'), admin_artist_path(artist) %></td>
+  <td align="center"><%= link_to image_tag('group_edit.png', :alt=>'Edit', :title=>'Edit Artist', :border=>'0'), edit_admin_artist_path(artist) %></td>
+  <td align="center"><%= link_to image_tag('group_delete.png', :alt=>'Delete', :title=>'Delete Artist', :border=>'0'), admin_artist_path(artist), :confirm => "Are you sure you want to delete artist, #{artist.name}?", :method => :delete   %></td>
+</tr>
+<% end %>
+</table>
+<% else %>
+<p>No Artists Found</p>
+<% end %>
+<br />
+<p class="text4"><%= link_to 'Add a new artist', new_admin_artist_path %></p>

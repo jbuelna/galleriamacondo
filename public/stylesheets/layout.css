@@ -1,0 +1,123 @@
+/** BASIC */
+
+html, body {
+	height: 100%;
+}
+
+/** HEADER */
+
+#header {
+	width: 778px;
+	height: 100px;
+	margin: 0px auto;
+}
+
+#logo {
+	float: left;
+	width: 313px;
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
+	background: url(/images/Galeria_Macondo_logo.gif);
+}
+
+#slogan {
+	float: left;
+	width: 465px;
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
+	background: url(/images/homepage02.jpg);
+}
+
+#logo b, #slogan b { position: absolute; left: -10000px; }
+
+/** MAIN MENU */
+
+#mainmenu {
+	width: 778px;
+	height: 59px;
+	margin: 0px auto;
+}
+
+#mainmenu ul {
+	margin: 0px;
+	padding: 15px 0px 0px 70px;
+	list-style: none;
+}
+
+#mainmenu ul li {
+	display: inline;
+}
+
+#mainmenu a {
+	display: block;
+	float: left;
+}
+
+#mainmenu1 {}
+#mainmenu2 {}
+#mainmenu3 {}
+#mainmenu4 {}
+#mainmenu5 {}
+
+#mainmenu b { position: absolute; left: -10000px; }
+
+.vbar {
+	display: block;
+	float: left;
+	width: 1px;
+	height: 32px;
+	margin: 0px 6px;
+	background: url(/images/homepage03.gif);
+}
+
+/** CONTENT */
+
+#content {
+	width: 778px;
+	margin: 0px auto;
+}
+
+/** 2-COLUMN LAYOUT */
+
+.two-col {
+	padding: 35px 0px 10px 0px;
+}
+
+.two-col .colA {
+	float: left;
+	width: 318px;
+	background: url(/images/homepage07.gif) repeat-y 301px 0px;
+}
+
+.two-col .colB {
+	float: left;
+	width: 460px;
+}
+
+/** 1-COLUMN LAYOUT */
+
+.one-col {
+	padding: 35px 105px 20px 100px;
+}
+
+/** BOX1 */
+
+#box1 {
+	margin: 0px 35px 0px 100px;
+}
+
+/** BOX2 */
+
+#box2 {
+	margin: 0px 105px 0px 0px;
+}
+
+/** FOOTER */
+
+#footer {
+	width: 778px;
+	height: 57px;
+	margin: 0px auto;
+}

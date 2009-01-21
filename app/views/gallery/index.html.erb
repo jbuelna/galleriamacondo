@@ -1,0 +1,71 @@
+<div id="custom-doc" class="yui-t4">
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b"><div class="yui-g">
+				<div id="search_form">
+				<% form_tag gallery_index_path, :method => :get, :name => "search_form" do %>
+					<%= text_field_tag :search, params[:search], :size => 30 %>
+					<%= submit_tag "Search", :name => nil %>
+					<%= submit_tag 'Find All', :name => nil, :onclick => "document.search_form.search.value='';" %>
+				<% end %>
+				</div> <!-- id="search" -->
+				
+				<br />
+				
+				<% unless @paintings.size == 0 %>
+				<div id="row">
+				<% for @painting in @paintings %>
+				<div class="col">
+					<%= lightbox_image_tag(url_for_file_column(@painting, "painting_image", "thumb"), url_for_file_column(@painting, "painting_image"), {:border => 0}, :title => @painting.caption) %>
+					<br/>
+					<b><%= @painting.truncated_title %></b><br/>
+					<%= @painting.artists.map{ |a| a.name } %><br/><br/>
+					<%= @painting.size %> inches</b><br/>
+					<%= @painting.medium.name %><br/><br/>
+					<%= image_tag("enlarge1.gif", options = { :border => "0" }) %> <%= link_to("more details", gallery_path(@painting)) %>
+
+				</div> <!-- id="col" -->
+				<% end %>
+				</div> <!-- id="row" -->
+				<br/>
+				<% else %>
+				<br/>
+				  <% if params[:search] %>
+				    <% flash[:notice] = "No matching items for #{params[:search]}" %>
+				  <% else %>
+				  <h3 class="text4">There are no paintings in our gallery at this time.</h3>
+				  <% end %>
+				<% end %>
+				
+			</div>
+			<br />
+			
+			<p class="text4"><%= will_paginate @paintings %>
+			</div>
+		</div>
+		<div class="yui-b">
+			<div class="right_column">
+				<h3 class="text2"><span class="text3">ARTIST</span></h3>
+				<div id="search_link">
+					<% unless @artists.size == 0 %>
+					<% for artist in @artists %>
+					<%= link_to artist.name, :search => artist.name %><br/>
+					<% end %>
+					<% end %>
+				</div>
+				<br />
+				<h3 class="text2"><span class="text3">MEDIUM</span></h3>
+				<div id="search_link">
+					<% unless @medium.size == 0 %>
+					<% for media in @medium %>
+					<%= link_to media.name, :search => media.name %><br/>
+					<% end %>
+					<% end %>
+				</div>
+
+				<br />
+				<p class="text6"><%= link_to image_tag('feed.gif', :alt=>'RSS Feed', :title=>'RSS Feed', :border=>'0'), formatted_gallery_index_url(:rss) %> <%= link_to 'Subscribe', formatted_gallery_index_url(:rss) %></p>
+			</div>
+		</div>
+	</div>
+</div>

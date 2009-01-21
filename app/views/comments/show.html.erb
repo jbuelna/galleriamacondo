@@ -1,0 +1,20 @@
+<p>
+  <b>Painting ID:</b>
+  <%=h @comment.painting_id %> - <%=h @comment.painting.title %>
+</p>
+
+<% if !@comment.artist_id.nil? %>
+<p>
+  <b>Artist ID:</b>
+  <%=h @comment.artist_id %> - <%=h @comment.artist.name %>
+</p>
+<% end %>
+
+<p>
+  <b>Body:</b>
+  <%=h @comment.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

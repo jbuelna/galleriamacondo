@@ -1,0 +1,23 @@
+<p>
+  <b>ID:</b>
+  <%=h @medium.id %>
+</p>
+
+<p>
+  <b>Create At:</b>
+  <%=h @medium.created_at %>
+</p>
+
+<p>
+  <b>Updated At:</b>
+  <%=h @medium.created_at %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @medium.name %>
+</p>
+
+
+<p class="text4"><%= link_to 'Edit', edit_admin_medium_path(@medium) %> |
+<%= link_to 'Back', admin_media_path %><p>

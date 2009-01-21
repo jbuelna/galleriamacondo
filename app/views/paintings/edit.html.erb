@@ -1,0 +1,9 @@
+<% form_for(@painting, :url => { :action => 'update', :id => @painting}, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => 'form' %>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<p class="text4"><%= link_to 'Show', admin_painting_path %> |
+<%= link_to 'Back', admin_painting_index_path %></p>

@@ -1,0 +1,30 @@
+<% unless @locations.size == 0 %>
+<table border="1">
+<thead>
+  <tr>
+	<th class="label2">Name</th>
+	<th class="label2">City</th>
+	<th class="label2">State</th>
+	<th class="label2">Zip</th>
+	<th class="label2">Show</th>
+	<th class="label2">Edit</th>
+	<th class="label2">Delete</th>
+  </tr>
+</thead>
+<% for location in @locations %>
+<tr>
+  <td><%= location.name %></td>
+  <td><%= location.city %></td>
+  <td><%= location.state %></td>
+  <td><%= location.zip %></td>
+  <td align="center"><%= link_to image_tag('group_show.png', :alt=>'Show', :title=>'Show Location', :border=>'0'), admin_location_path(location) %></td>
+  <td align="center"><%= link_to image_tag('group_edit.png', :alt=>'Edit', :title=>'Edit Location', :border=>'0'), edit_admin_location_path(location) %></td>
+  <td align="center"><%= link_to image_tag('group_delete.png', :alt=>'Delete', :title=>'Delete Location', :border=>'0'), admin_location_path(location), :confirm => "Are you sure you want to delete location, #{location.name}?", :method => :delete   %></td>
+</tr>
+<% end %>
+</table>
+<% else %>
+<p>No Locations Found</p>
+<% end %>
+<br />
+<p class="text4"><%= link_to 'Add a new location', new_admin_location_path %></p>

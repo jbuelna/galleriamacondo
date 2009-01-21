@@ -1,0 +1,22 @@
+<% form_remote_for :medium, :url => {:action => 'create'}, :html => { :id => 'media_form' } do |f| %>
+	<%= f.text_field :name %> <%= f.submit "Add" %>
+<% end %>
+
+<br />
+<% unless @media.size == 0 %>
+<table border="1" id="medium">
+	<tr>
+		<th>Name</th>
+		<th>Show</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+
+	<% for @medium in @media %>
+		<%= render :partial => 'medium', :object => @medium %>
+	<% end %>
+</table>
+<% else %>
+<p>No Medium Found</p>
+<% end %>
+

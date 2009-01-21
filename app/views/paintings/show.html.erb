@@ -1,0 +1,37 @@
+
+<dl>
+  <dt class="label2">Artist</dt>
+  <dd><%= @painting.artists.map{ |artist| artist.name } %></dd>
+  <dt class="label2">Title</dt>
+  <dd><%= @painting.title %></dd>
+  <dt class="label2">Year</dt>
+  <dd><% if @painting.year.nil? %>
+	    N/A
+	  <% else %>
+	    <%= @painting.year.strftime("%Y") %>
+	  <% end %>
+  </dd>
+  <dt class="label2">Medium</dt>
+  <dd><%= @painting.medium.name %></dd>
+  <dt class="label2">Size</dt>
+  <dd><%= @painting.size %></dd>
+  <dt class="label2">Price</dt>
+  <dd>$<%= sprintf("%.2f", @painting.price) %></dd>
+  <dt class="label2">Location</dt>
+  <% if @painting.location_id.nil? %>
+  <dd>No location on file</dd>
+  <% else %>
+  <dd><%= @painting.location.name %></dd>
+  <% end %>
+  <dt class="label2">Notes</dt>
+  <dd><%= @painting.notes %></dd>
+  <dt class="label2">Image</dt>
+  <% if @painting.painting_image.nil? %>
+  <dd>No image on file</dd>
+  <% else %>
+  <dd><%= image_tag url_for_file_column("painting", "painting_image", "medium") %></dd>
+  <% end %>
+</dl>
+
+<p class="text4"><%= link_to 'Edit', edit_admin_painting_path(@painting) %> |
+<%= link_to 'Back', admin_paintings_path %></p>

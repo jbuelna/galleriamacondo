@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Galleria Macondo - The Art Store</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<%= stylesheet_link_tag "default", "layout" %>
+<%= javascript_include_tag :defaults %>
+ 
+</head>
+<body>
+<div id="header">
+	<p id="logo"><b>Galleria Macondo</b></p>
+</div>
+<div id="mainmenu" class="bg1">
+    <ul>
+        <li><a href="<%= home_path %>" id="mainmenu1" accesskey="1" title="" class="link1">Gallery</a><span class="vbar"></span></li>
+        <li><a href="#" id="mainmenu2" accesskey="2" title="" class="link1">Artists</a><span class="vbar"></span></li>
+        <li><a href="/about" id="mainmenu3" accesskey="3" title="" class="link1">About</a><span class="vbar"></span></li>
+        <li><a href="/contact" id="mainmenu4" accesskey="4" title="" class="link1">Contact</a><span class="vbar"></span></li>
+        <li><a href="/admin" id="mainmenu5" accesskey="5" title="" class="link1">Admin</a></li>
+    </ul>
+</div>
+<div id="content" class="bg3">
+    <div class="one-col bg2">
+	  <h3 id="notice"><%= flash[:notice] %></h3>
+	  <br />
+
+      <h1 class="text1"><%= @page_title %></h1>
+      <%= yield %>
+    </div>
+</div>
+<div id="footer" class="bg4">
+    <p class="text5">Copyright (c) 2008 Galleria Macondo. All rights reserved.</p>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,64 @@
+#table #row {
+font:12px Verdana, Arial, Helvetica, sans-serif;
+border: 0px solid; /* Remove border */
+height:510px;
+font-size: 10px;
+color: #6B684F;
+}
+
+#row .col {
+float:left;
+text-align:center;
+padding-top:3px; /* Spacing between the pic and the top border */
+width:135px; /* Height of each cell in a table */
+height:250px; /* Height of each cell in a table */
+margin-left:0px; /* Puts spacing between Gallery pics */
+border: 1px solid; /* Remove border */
+}
+
+.yui-t5 {
+border:0px solid;
+}
+
+.yui-g {
+border:0px solid;
+}
+
+.yui-b {
+border:0px solid;
+}
+
+.bd {
+border:0px solid;
+}
+
+.yui-main {
+border:0px solid;
+}
+
+.right_column {
+border:0px solid;
+padding:4px 4px 4px 4px; /* Spacing between the pic and the top border */
+margin-left:5px; /* Puts spacing between Gallery pics */
+margin-right:14px; /* Puts spacing between Gallery pics */
+}
+
+div#heading {
+background: url(/images/homepage04.gif);
+color: #FFFFFF;
+font-weight: bold;
+width:115px;
+line-height:18px;
+vertical-align:bottom;
+border-color:#432C16;
+}
+
+#search_link {
+margin-bottom: 10px;
+font: bold 10px Georgia, "Times New Roman", Times, serif;
+color: #513A27;
+}
+
+.solo_painting {
+text-align:center;
+}

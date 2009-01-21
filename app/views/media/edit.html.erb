@@ -1,0 +1,15 @@
+<%= error_messages_for :medium %>
+
+<% form_remote_for(@medium, :url => { :action => 'update', :id => @medium}) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<p class="text4"><%= link_to 'Show', admin_medium_path(@medium) %> |
+<%= link_to 'Back', admin_media_path %></p>

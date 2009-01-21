@@ -1,0 +1,4 @@
+page.insert_html :bottom, :medium, :partial => 'medium', :object => @medium
+page['media_form'].reset
+page.replace_html :notice, flash[:notice]
+flash.discard

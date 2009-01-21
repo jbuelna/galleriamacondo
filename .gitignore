@@ -1,0 +1,8 @@
+.DS_Store
+log/*.log
+log/*.pid
+tmp/**/*
+config/database.yml
+db/*.sqlite3
+public/painting/**/*
+db/sphinx/*/*

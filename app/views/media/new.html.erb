@@ -1,0 +1,14 @@
+<%= error_messages_for :medium %>
+
+<% form_remote_for(@medium, :url => {:action => 'create'}) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+  <br />
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+<p class="text4"><%= link_to 'Back', admin_media_path %></p>
